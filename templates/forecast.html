@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+    <div class="col-3 col-sm-2 m-1 bg-danger rounded">Forecast</div>
+</div>
+
+<div class="bg-warning d-flex flex-row">
+    <div class="col-3"><span>Date</span></div>
+    <div class="col-3"><span> Weather</span></div>
+    <div class="col-3"><span> Temperature</span></div>
+    <div class="col-3"><span> Wind</span></div>
+</div>
+<div class="bg-secondary d-flex flex-row  mt-1" ng-repeat="weather in forecast">
+    <div class="col-3"><span>{{weather.date}}</span></div>
+    <div class="col-3"><span>{{weather.weather}}</span></div>
+    <div class="col-3"><span>{{weather.temperature}}</span></div>
+    <div class="col-3"><span>{{weather.wind.speed+" '"+weather.wind.deg}} </span></div>
+</div>

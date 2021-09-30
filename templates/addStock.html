@@ -1,0 +1,22 @@
+
+    <div class="row justify-content-center">
+        <div class="col-3 col-sm-2 m-1 bg-danger rounded">STOCK</div>
+    </div>
+    <div class="row my-2 mx-0 bg-white justify-content-center border border-dark rounded">
+        <div class="form-group col-8">
+            <label for="produceName">Produce Name</label>
+            <input class="form-control" id="produceName" type="text" placeholder="Potato" ng-model="produceName">
+        </div>
+        <div class="form-group col-8">
+            <label for="produceQuantity">Quantity(KGs)</label>
+            <input class="form-control" id="produceQuantity" type="number" placeholder="12" ng-model="quantity">
+        </div>
+        <div class="form-group col-8">
+            <label for="date">Date</label>
+            <input class="form-control" id="date" type="datetime-local" ng-model="datetime">
+        </div>
+        <div class="row justify-content-center m-0 p-1">
+            <div class="col-6 col-sm-4"><button class="btn btn-success" ng-click="getProduce()">ADD TO STOCK</button></div>
+        </div>
+       
+    </div>
