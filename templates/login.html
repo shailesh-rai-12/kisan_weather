@@ -2,19 +2,30 @@
 <div class="row justify-content-center">
     <div class="col-3 col-sm-2 m-1 bg-danger rounded">{{ head }}</div>
 </div>
-<div class="row">
+<form name="form" class="row" novalidate>
     <div class="form-group p-1">
         <label for="email">Email</label>
-        <input class="form-control" id="email" type="text" placeholder="abc@example.com">
+        <input class="form-control" name="email" id="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" type="text" placeholder="abc@example.com" ng-model="user.email" ng-required="true">
     </div>
     <div class="form-group p-1">
         <label for="password">Password</label>
-        <input class="form-control" id="password" type="password" placeholder="password">
+        <input class="form-control" ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" name="password" id="password" type="password" placeholder="password" ng-model="user.password" ng-required="true">
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2"><button class="btn btn-success">LOGIN</button></div>
+        <div class="col-2"><button type="submit" ng-click="form.email.$valid && form.password.$valid && loginUser(user)" class="btn btn-success">LOGIN</button></div>
     </div>
     <div class="row justify-content-center m-0 p-1">
         <div class="col-2 m-1"><a ui-sref="signup">SignUp</a></div>
     </div>
+</form>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 alert" ng-show="form.$submitted">
+        <p class="row alert alert-danger m-0 p-0" ng-show="form.email.$untouched">*Email Required</p>
+        <p  class="row alert alert-danger m-0 p-0" ng-show="form.email.$invalid && form.email.$touched">*Valid Email Required</p>
+
+        <p class="row alert alert-danger m-0 p-0" ng-show="form.password.$untouched">*Password Required</p>
+        <p  class="row alert alert-danger m-0 p-0" ng-show="form.password.$invalid && form.password.$touched">*Valid Password Required</p>          
+    </div>
+    
 </div>

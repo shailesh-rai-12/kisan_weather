@@ -11,6 +11,7 @@ import forecastController from './controllers/forecastController.js'
 import WeatherService from './services/WeatherService.js'
 import addStockController from './controllers/addStockController.js'
 import inventoryController from './controllers/inventoryController.js'
+import RegisterService from './services/RegisterService.js'
 
 
 
@@ -31,3 +32,4 @@ kisanApp.controller('forecastController',forecastController);
 kisanApp.service('WeatherService',WeatherService);
 kisanApp.controller('addStockController',addStockController);
 kisanApp.controller('inventoryController',inventoryController);
+kisanApp.service('RegisterService',RegisterService);

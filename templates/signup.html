@@ -2,23 +2,40 @@
 <div class="row justify-content-center">
     <div class="col-3 col-sm-2 m-1 bg-danger rounded">{{ head }}</div>
 </div>
-<div class="row">
+<form name="form" class="row" novalidate>
     <div class="form-group p-1">
         <label for="name">Name</label>
-        <input class="form-control" id="name" type="text" placeholder="John Cena">
+        <input class="form-control" id="name" type="text" name="name" placeholder="John Cena" ng-pattern="/^[a-zA-Z ]{3,30}$/" ng-model="user.name" ng-required="true">
     </div>
     <div class="form-group p-1">
         <label for="email">Email</label>
-        <input class="form-control" id="email" type="text" placeholder="abc@example.com">
+        <input class="form-control" id="email"name="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" type="text" placeholder="abc@example.com" ng-model="user.email" ng-required="true">
     </div>
     <div class="form-group p-1">
         <label for="password">Password</label>
-        <input class="form-control" id="password" type="password" placeholder="password">
+        <input class="form-control" id="password" ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" name="password" type="password" placeholder="password" ng-model="user.password" ng-required="true">
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2"><button class="btn btn-success">SignUp</button></div>
+        <div class="col-2"><button type="submit" class="btn btn-success" ng-click="form.name.$valid && form.email.$valid && form.password.$valid && registerUser(user)">SignUp</button></div>
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2 m-1"><a ui-sref="login">Login</a></div>
+        <div class="col-2 mt-1"><a ui-sref="login">Login</a></div>
+    </div>
+</form>
+<!-- message  -->
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 alert" ng-show="form.$submitted">
+        <p class="row alert alert-danger m-0 p-0" ng-show="form.name.$untouched">*Name Required</p>
+        <p  class="row alert alert-danger m-0 p-0" ng-show="form.name.$invalid && form.name.$touched">*Valid Name Required</p>
+
+        <p class="row alert alert-danger m-0 p-0" ng-show="form.email.$untouched">*Email Required</p>
+        <p  class="row alert alert-danger m-0 p-0" ng-show="form.email.$invalid && form.email.$touched">*Valid Email Required</p>
+
+        <p class="row alert alert-danger m-0 p-0" ng-show="form.password.$untouched">*Password Required</p>
+        <p  class="row alert alert-danger m-0 p-0" ng-show="form.password.$invalid && form.password.$touched">*Valid Password Required</p>          
+    </div>
+    <div class="col-12" ng-show="form.$submitted">
+                <div class="row justify-content-center alert {{alert}}"><span>{{message}}</span> </div>  
+
     </div>
 </div>
