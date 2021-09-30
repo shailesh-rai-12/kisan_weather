@@ -12,7 +12,8 @@ import WeatherService from './services/WeatherService.js'
 import addStockController from './controllers/addStockController.js'
 import inventoryController from './controllers/inventoryController.js'
 import RegisterService from './services/RegisterService.js'
-
+import LoginService from './services/LoginService.js'
+import logoutCtrl from './controllers/logoutController.js'
 
 
 
@@ -33,3 +34,5 @@ kisanApp.service('WeatherService',WeatherService);
 kisanApp.controller('addStockController',addStockController);
 kisanApp.controller('inventoryController',inventoryController);
 kisanApp.service('RegisterService',RegisterService);
+kisanApp.service('LoginService',LoginService);
+kisanApp.controller('logoutController',logoutCtrl);

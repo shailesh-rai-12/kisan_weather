@@ -1,6 +1,7 @@
 export default function($scope,$rootScope){
 
     console.log('addStock controller');
+    console.log($rootScope.loggedUser);
     $rootScope.dataItems=[]
     $rootScope.getProduce = function()
     { 

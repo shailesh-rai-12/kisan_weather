@@ -1,3 +1,9 @@
-export default function($scope,$log){
-                $log.info('home controller');
+export default function($state,$log,$rootScope){
+                $log.info('app controller');
+               if(sessionStorage.getItem("status")!="true")
+               {
+                    $state.go('login');
+               }
+                
+
 }

@@ -67,7 +67,6 @@ $stateProvider
 
             })
             .state('logout',{
-                parent:'app',
                 url:'/logout',
                 controller:'logoutController'
             })
