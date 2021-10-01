@@ -16,10 +16,10 @@
         <input class="form-control" id="password" ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" name="password" type="password" placeholder="password" ng-model="user.password" ng-required="true">
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2"><button type="submit" class="btn btn-success" ng-click="form.name.$valid && form.email.$valid && form.password.$valid && registerUser(user)">SignUp</button></div>
+        <div class="col-2"><button type="submit" class="btn btn-dark" ng-click="form.name.$valid && form.email.$valid && form.password.$valid && registerUser(user)">SignUp</button></div>
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2 mt-1"><a ui-sref="login">Login</a></div>
+        <div class="col-1 mt-1"><a ui-sref="login">Login</a></div>
     </div>
 </form>
 <!-- message  -->

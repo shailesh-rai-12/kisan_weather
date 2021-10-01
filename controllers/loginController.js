@@ -1,4 +1,4 @@
-export default function($scope,$log,LoginService,$rootScope,$state){
+export default function($scope,$log,LoginService,$rootScope,$state,GoogleSign){
     $scope.head="Login";
     $log.info('login Controller');
     $scope.tryLogin=function(user)
@@ -10,8 +10,7 @@ export default function($scope,$log,LoginService,$rootScope,$state){
                 if(res.data.flag==1)
                 {
                     console.log("Logged In");
-                    sessionStorage.setItem("user",user.email);
-                    sessionStorage.setItem("status",true);
+                    LoginService.createSession(user.email,true,"local");
                     $state.go('produce');
                 }else{
                     $scope.alert="alert-danger";
@@ -23,4 +22,23 @@ export default function($scope,$log,LoginService,$rootScope,$state){
                     console.log(err);
          })
     }
+
+     $scope.googleSignIn= function()
+    {
+        GoogleSign.googleSignIn()
+            .then(function(res){
+                console.log(res);
+
+                    console.log("Logged In");
+                    LoginService.createSession(res.user.email,true,"google");
+                     $state.go('produce');
+                    //$scope.message="Wrong Credentials";
+                   
+                    
+                
+            }).catch(function(err){
+                console.log(err);
+            })
+    }
+
 }

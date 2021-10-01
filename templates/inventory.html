@@ -1,16 +1,16 @@
-<div class="row justify-content-center">
+<div class="row  justify-content-center">
     <div class="col-3 col-sm-2 m-1 bg-danger rounded">INVENTORY</div>
 </div>
 
-<div class="bg-warning d-flex flex-row">
+<div class="bg-dark text-white d-flex flex-row">
     <div class="col-3"><span> Produce Name</span><span class="fa fa-arrow-up"></span></div>
     <div class="col-3"><span> Quantity</span><span class="fa fa-arrow-up"></span></div>
     <div class="col-3"><span> Date-Time</span><span class="fa fa-arrow-up"></span></div>
-    <!-- <div class="col-3 text-center"><span> Delete</span></span></div> -->
+    <div class="col-3"><span> Delete</span>/<span>Update</span></div>
 </div>
 <div class="bg-secondary d-flex flex-row mt-1" ng-repeat="produceInfo in produces">
     <div class="col-3"><span>{{produceInfo.name}}</span></div>
     <div class="col-3"><span>{{produceInfo.quantity}}</span></div>
     <div class="col-3"><span>{{produceInfo.datetime}}</span></div>
-    <div class="col-3 text-center"><span class="fa fa-times"> </span></div>
+    <div class="col-3"><i class="fa fa-times mx-1"></i><i class="fas fa-pen mx-1"></i></div>
 </div>

@@ -12,12 +12,21 @@
         <input class="form-control" ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" name="password" id="password" type="password" placeholder="password" ng-model="user.password" ng-required="true">
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2"><button type="submit" ng-click="form.email.$valid && form.password.$valid && tryLogin(user)" class="btn btn-success">LOGIN</button></div>
+        <div class="col-2"><button type="submit" ng-click="form.email.$valid && form.password.$valid && tryLogin(user)" class="btn btn-dark">LOGIN</button></div>
     </div>
     <div class="row justify-content-center m-0 p-1">
-        <div class="col-2 m-1"><a ui-sref="signup">SignUp</a></div>
+        <div class="col-2 m-0"><a ui-sref="signup">SignUp</a></div>
+    </div>
+    <div class="row justify-content-center m-0 p-1">
+        <div class="col-1 m-0">Or</div>
+    </div>
+    <div class="row justify-content-center m-0 p-0">
+        
+        <div class="col-2 m-0"><button type="button" class="btn btn-primary" ng-click="googleSignIn()">Google</button></div>
     </div>
 </form>
+
+
 
 <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6 alert" ng-show="form.$submitted">

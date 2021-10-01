@@ -14,25 +14,33 @@ import inventoryController from './controllers/inventoryController.js'
 import RegisterService from './services/RegisterService.js'
 import LoginService from './services/LoginService.js'
 import logoutCtrl from './controllers/logoutController.js'
-
+import GoogleSign from './services/GoogleSignin.js'
 
 
 
 var kisanApp=angular.module('kisanApp',['ui.router']);
 
+//configuration
 kisanApp.config(baseConfig);
+
+//controller
 kisanApp.controller('indexController',indexCtrl);
 kisanApp.controller('loginController',loginCtrl);
 kisanApp.controller('signupController',signupCtrl);
 kisanApp.controller('appController',appCtrl);
 kisanApp.controller('weatherController',weatherCtrl);
-kisanApp.factory('WeatherFactory',weatherFactory);
-kisanApp.service('DirectionService',directionService);
-kisanApp.factory('ForecastFactory',forecastFactory);
+kisanApp.controller('logoutController',logoutCtrl);
 kisanApp.controller('forecastController',forecastController);
-kisanApp.service('WeatherService',WeatherService);
 kisanApp.controller('addStockController',addStockController);
 kisanApp.controller('inventoryController',inventoryController);
+
+//factory
+kisanApp.factory('WeatherFactory',weatherFactory);
+kisanApp.factory('ForecastFactory',forecastFactory);
+
+//services
+kisanApp.service('WeatherService',WeatherService);
 kisanApp.service('RegisterService',RegisterService);
 kisanApp.service('LoginService',LoginService);
-kisanApp.controller('logoutController',logoutCtrl);
+kisanApp.service('DirectionService',directionService);
+kisanApp.service("GoogleSign",GoogleSign);

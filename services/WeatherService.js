@@ -6,7 +6,7 @@ export default function(DirectionService)
             weatherObj['date']=(new Date(object.dt * 1000)).toLocaleDateString('en-IN');
             weatherObj['name']=name;
             weatherObj['weather']=object.weather[0].main;
-            weatherObj['temperature']=Math.round(object.main.temp - 273.15);
+            weatherObj['temperature']=Math.round(object.main.temp - 273.15)+String.fromCharCode(176)+'C';
             weatherObj['wind']={};
             weatherObj['wind']['speed']=object.wind.speed;
             weatherObj['wind']['deg'] =DirectionService.direction(object.wind.deg);

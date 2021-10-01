@@ -1,12 +1,12 @@
 <div class="row justify-content-center">
-    <div class="col-3 col-sm-2 m-1 bg-danger rounded">TODAY</div>
+    <div class="col-3 col-sm-2 m-1 bg-danger rounded">Today</div>
 </div>
 
-<div class="row bg-white border border-dark rounded">
+<div class="row bg-white  rounded">
     <div class="col"> 
         <div class="row my-1">
-            <div class="col-12 col-sm-10"><input ng-model="cityname" class="form-control border border-primary" type="text" placeholder="city name"></div>
-            <div class="col-12 col-sm-2"><button ng-click="searchCity()" class="form-control btn btn-primary">Search</button></div>
+            <div class="col-12 col-sm-10"><input ng-model="cityname" class="form-control border border-danger" type="text" placeholder="city name"></div>
+            <div class="col-12 col-sm-2"><button ng-click="searchCity()" class="form-control btn btn-dark text-white">Search</button></div>
         </div>
         <div class="row my-1 justify-content-center">
             <div class="col-5"><span>City:</span></div>
@@ -22,7 +22,7 @@
         </div>
         <div class="row my-1 justify-content-center">
             <div class="col-5"><span>Temperature:</span></div>
-            <div class="col-5"><span>{{weather.temperature+'&#176C'}}</span></div>
+            <div class="col-5"><span>{{weather.temperature}}</span></div>
         </div>
         <div class="row my-1 justify-content-center">
             <div class="col-5"><span>Wind:</span></div>

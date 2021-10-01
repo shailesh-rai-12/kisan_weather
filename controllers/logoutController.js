@@ -1,8 +1,10 @@
-export default function($state)
+export default function($state,LoginService,GoogleSign)
 {
     console.log("logout controller");
-    sessionStorage.setItem("user",null);
-    sessionStorage.setItem("status",false);
+    if(sessionStorage.getItem("source")=="google"){
+        GoogleSign.googleLogOut();
+    }
+    LoginService.destroySession();
     $state.go('login');
 
 }
