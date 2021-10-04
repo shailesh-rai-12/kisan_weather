@@ -15,16 +15,15 @@ export default function($scope,$rootScope){
         $rootScope.dataItems.push(produce);
         $scope.cancel();
 
-       // $rootScope.putData(produce);
     }
 
     $rootScope.editItem = function(item){
         $scope.mode=false;
-        //console.log($scope);
         itemId=item.produceInfo.id;
         $scope.produceName=item.produceInfo.name;
         $scope.quantity=item.produceInfo.quantity;
-        $scope.date=(new Date(item.produceInfo.date)).toLocaleDateString('en-IN');
+        let date=item.produceInfo.date.split("/");
+        $scope.date=new Date(date[1]+'/'+date[0]+'/'+date[2]);
     }
 
 

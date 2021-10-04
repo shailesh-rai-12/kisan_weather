@@ -33,10 +33,7 @@ export default function($rootScope,$scope){
     $rootScope.deleteItem=function(item)
     {
         console.log(item);
-        //console.log($rootScope.dataItems[0].hashKey())
-        //console.log(item.produceInfo.$$hashkey);
-        //console.log($rootScope.dataItems)
-     $rootScope.dataItems.splice(item.produceInfo.id,1);
+        $rootScope.dataItems.splice(item.produceInfo.id,1);
     }
 
     
