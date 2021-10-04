@@ -3,14 +3,14 @@
 </div>
 
 <div class="bg-dark text-white d-flex flex-row">
-    <div class="col-3"><span> Produce Name</span><span class="fa fa-arrow-up"></span></div>
-    <div class="col-3"><span> Quantity</span><span class="fa fa-arrow-up"></span></div>
-    <div class="col-3"><span> Date-Time</span><span class="fa fa-arrow-up"></span></div>
+    <div class="col-3 pe-auto" ng-click="sortData('name')"><span> Produce Name</span><span class="fa" ng-class="getClass('name')"></span></div>
+    <div class="col-3" ng-click="sortData('quantity')"><span> Quantity</span><span class="fa" ng-class="getClass('quantity')"></span></div>
+    <div class="col-3" ng-click="sortData('date')"><span> Date</span><span class="fa" ng-class="getClass('date')"></span></div>
     <div class="col-3"><span> Delete</span>/<span>Update</span></div>
 </div>
-<div class="bg-secondary d-flex flex-row mt-1" ng-repeat="produceInfo in produces">
+<div class="bg-secondary d-flex flex-row mt-1" ng-repeat="produceInfo in produces | orderBy:sortColumn:reverseSort">
     <div class="col-3"><span>{{produceInfo.name}}</span></div>
     <div class="col-3"><span>{{produceInfo.quantity}}</span></div>
-    <div class="col-3"><span>{{produceInfo.datetime}}</span></div>
-    <div class="col-3"><i class="fa fa-times mx-1"></i><i class="fas fa-pen mx-1"></i></div>
+    <div class="col-3"><span>{{produceInfo.date}}</span></div>
+    <div class="col-3"><i class="fa fa-times mx-1" ng-click="deleteItem(this)"></i><i class="fas fa-pen mx-1" ng-click="editItem(this)"></i></div>
 </div>

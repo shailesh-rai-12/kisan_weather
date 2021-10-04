@@ -13,10 +13,12 @@
         </div>
         <div class="form-group col-8">
             <label for="date">Date</label>
-            <input class="form-control" id="date" type="datetime-local" ng-model="datetime">
+            <input class="form-control" id="date" type="date" ng-model="date" placeholder="dd/mm/yyyy">
         </div>
         <div class="row justify-content-center m-0 p-1">
-            <div class="col-6 col-sm-4 my-2"><button class="btn btn-dark" ng-click="getProduce()">ADD TO STOCK</button></div>
+            <div class="col-6 col-sm-4 col-md-2 my-2" ng-show="mode"><button class="btn btn-dark" ng-click="getProduce()">ADD </button></div>
+            <div class="col-6 col-sm-4 col-md-2 my-2" ng-hide="mode"><button class="btn btn-dark" ng-click="updateItem()">UPDATE</button></div>
+            <div class="col-6 col-sm-4 col-md-2 my-2"><button class="btn btn-danger" ng-click="cancel()">Cancel</button></div>
         </div>
        
     </div>

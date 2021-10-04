@@ -15,6 +15,7 @@ import RegisterService from './services/RegisterService.js'
 import LoginService from './services/LoginService.js'
 import logoutCtrl from './controllers/logoutController.js'
 import GoogleSign from './services/GoogleSignin.js'
+import navDirective from './directives/navigation.js'
 
 
 
@@ -22,6 +23,9 @@ var kisanApp=angular.module('kisanApp',['ui.router']);
 
 //configuration
 kisanApp.config(baseConfig);
+
+//directives
+kisanApp.directive("navBar",navDirective);
 
 //controller
 kisanApp.controller('indexController',indexCtrl);
