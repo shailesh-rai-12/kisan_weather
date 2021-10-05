@@ -1,0 +1,60 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'view',
+1 verbose cli   '--json',
+1 verbose cli   'oclazyload',
+1 verbose cli   'description',
+1 verbose cli   'dist-tags.latest',
+1 verbose cli   'homepage',
+1 verbose cli   'version' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.5
+4 silly mapToRegistry name oclazyload
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry data Result {
+7 silly mapToRegistry   raw: 'oclazyload',
+7 silly mapToRegistry   scope: null,
+7 silly mapToRegistry   escapedName: 'oclazyload',
+7 silly mapToRegistry   name: 'oclazyload',
+7 silly mapToRegistry   rawSpec: '',
+7 silly mapToRegistry   spec: 'latest',
+7 silly mapToRegistry   type: 'tag' }
+8 silly mapToRegistry uri https://registry.npmjs.org/oclazyload
+9 verbose request uri https://registry.npmjs.org/oclazyload
+10 verbose request no auth needed
+11 info attempt registry request try #1 at 12:39:08 PM
+12 verbose request id a9a29e8951065add
+13 http request GET https://registry.npmjs.org/oclazyload
+14 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ETIMEDOUT 192.168.21.253:3188
+15 info attempt registry request try #2 at 12:39:39 PM
+16 http request GET https://registry.npmjs.org/oclazyload
+17 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ETIMEDOUT 192.168.21.253:3188
+18 info attempt registry request try #3 at 12:41:00 PM
+19 http request GET https://registry.npmjs.org/oclazyload
+20 verbose stack Error: tunneling socket could not be established, cause=connect ETIMEDOUT 192.168.21.253:3188
+20 verbose stack     at ClientRequest.onError (C:\Program Files\nodejs\node_modules\npm\node_modules\request\node_modules\tunnel-agent\index.js:176:17)
+20 verbose stack     at ClientRequest.g (events.js:292:16)
+20 verbose stack     at emitOne (events.js:96:13)
+20 verbose stack     at ClientRequest.emit (events.js:188:7)
+20 verbose stack     at Socket.socketErrorListener (_http_client.js:310:9)
+20 verbose stack     at emitOne (events.js:96:13)
+20 verbose stack     at Socket.emit (events.js:188:7)
+20 verbose stack     at emitErrorNT (net.js:1281:8)
+20 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:80:11)
+20 verbose stack     at process._tickCallback (internal/process/next_tick.js:104:9)
+21 verbose cwd d:\Practice\Kisan
+22 error Windows_NT 10.0.19043
+23 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "view" "--json" "oclazyload" "description" "dist-tags.latest" "homepage" "version"
+24 error node v6.11.5
+25 error npm  v3.10.10
+26 error code ECONNRESET
+27 error network tunneling socket could not be established, cause=connect ETIMEDOUT 192.168.21.253:3188
+28 error network This is most likely not a problem with npm itself
+28 error network and is related to network connectivity.
+28 error network In most cases you are behind a proxy or have bad network settings.
+28 error network
+28 error network If you are behind a proxy, please make sure that the
+28 error network 'proxy' config is set properly.  See: 'npm help config'
+29 verbose exit [ 1, true ]
