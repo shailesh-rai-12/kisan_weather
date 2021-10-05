@@ -1,7 +1,7 @@
 import baseConfig from './configuration/base.js'
-import indexCtrl from './controllers/indexController.js'
-import loginCtrl from './controllers/loginController.js'
-import signupCtrl from './controllers/signupController.js'
+// import indexCtrl from './controllers/indexController.js'
+// import loginCtrl from './controllers/loginController.js'
+// import signupCtrl from './controllers/signupController.js'
 import appCtrl from './controllers/appController.js'
 import weatherCtrl from './controllers/weatherController.js'
 import weatherFactory from './factories/WeatherFactory.js'
@@ -19,7 +19,7 @@ import navDirective from './directives/navigation.js'
 
 
 
-var kisanApp=angular.module('kisanApp',['ui.router']);
+var kisanApp=angular.module('kisanApp',['ui.router','oc.lazyLoad']);
 
 //configuration
 kisanApp.config(baseConfig);
@@ -28,9 +28,9 @@ kisanApp.config(baseConfig);
 kisanApp.directive("navBar",navDirective);
 
 //controller
-kisanApp.controller('indexController',indexCtrl);
-kisanApp.controller('loginController',loginCtrl);
-kisanApp.controller('signupController',signupCtrl);
+// kisanApp.controller('indexController',indexCtrl);
+// kisanApp.controller('loginController',loginCtrl);
+// kisanApp.controller('signupController',signupCtrl);
 kisanApp.controller('appController',appCtrl);
 kisanApp.controller('weatherController',weatherCtrl);
 kisanApp.controller('logoutController',logoutCtrl);

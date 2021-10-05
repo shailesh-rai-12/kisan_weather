@@ -1,4 +1,4 @@
-export default function($scope,$log,$rootScope,$state){
+angular.module('kisanApp').controller('indexController',function($scope,$log,$rootScope,$state){
     $log.info('Index Controller');
     if(sessionStorage.getItem("status")!="true")
         {
@@ -6,4 +6,4 @@ export default function($scope,$log,$rootScope,$state){
         }else{
             $state.go('produce');
         }
-}
+});

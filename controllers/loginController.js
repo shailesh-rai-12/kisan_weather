@@ -1,4 +1,4 @@
-export default function($scope,$log,LoginService,$rootScope,$state,GoogleSign){
+angular.module('kisanApp').controller('loginController',function($scope,$log,LoginService,$rootScope,$state,GoogleSign){
     $scope.head="Login";
     $log.info('login Controller');
     $scope.tryLogin=function(user)
@@ -41,4 +41,4 @@ export default function($scope,$log,LoginService,$rootScope,$state,GoogleSign){
             })
     }
 
-}
+});

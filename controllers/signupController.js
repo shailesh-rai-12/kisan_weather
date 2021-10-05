@@ -1,4 +1,4 @@
-export default function($scope,$log,RegisterService){
+angular.module('kisanApp').controller('signupController',function($scope,$log,RegisterService){
     $scope.head="SignUp";
     $scope.registration=true;
     $scope.message='';
@@ -24,4 +24,4 @@ export default function($scope,$log,RegisterService){
                 }
             })
     }
-}
+})
