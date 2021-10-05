@@ -4,7 +4,7 @@ $stateProvider
             .state('index',{
                 url:'/index',
                 templateUrl:'templates/forms.html',
-                controller:'indexController'
+                controller:'indexController',
             })
             .state('login',{
                 parent:'index',
