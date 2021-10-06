@@ -1,4 +1,4 @@
-export default function($state,$log,$rootScope){
+angular.module('kisanApp').controller('appController',function($state,$log,$rootScope){
                 $log.info('app controller');
                if(sessionStorage.getItem("status")!="true")
                {
@@ -6,4 +6,4 @@ export default function($state,$log,$rootScope){
                }
                 
 
-}
+})

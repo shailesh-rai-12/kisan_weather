@@ -22,7 +22,7 @@ const provider=new GoogleAuthProvider();
 provider.addScope('profile');
 provider.addScope('email');
 
-export default function(){
+angular.module('kisanApp').service('GoogleSign',function(){
 
         this.googleSignIn = function(){
             
@@ -32,5 +32,5 @@ export default function(){
         this.googleLogOut = function(){
                 return signOut(auth);
         }
-    }
+    })
     

@@ -1,4 +1,4 @@
-export default function($state,LoginService,GoogleSign)
+angular.module('kisanApp').controller('logoutController',function($state,LoginService,GoogleSign)
 {
     console.log("logout controller");
     if(sessionStorage.getItem("source")=="google"){
@@ -7,4 +7,4 @@ export default function($state,LoginService,GoogleSign)
     LoginService.destroySession();
     $state.go('login');
 
-}
+})

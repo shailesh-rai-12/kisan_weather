@@ -1,4 +1,4 @@
-export default function($scope,$rootScope,$log,WeatherFactory,WeatherService){
+angular.module('kisanApp').controller('weatherController',function($scope,$rootScope,$log,WeatherFactory,WeatherService){
     $log.info('weather controller');
     $scope.cityname="Chandigarh"
     $scope.searchCity=function(){
@@ -16,4 +16,4 @@ export default function($scope,$rootScope,$log,WeatherFactory,WeatherService){
     }
     $scope.searchCity();
     
-}
+})

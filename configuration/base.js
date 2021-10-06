@@ -2,18 +2,44 @@
 export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
     $urlRouterProvider.otherwise('/index/login');
     $ocLazyLoadProvider.config({
-        modules:[{
+        modules:[
+        {
             name:'indexController',
             files:['../controllers/indexController.js']
         },
         {
             name:'loginController',
-            files:['../controllers/loginController.js']
+            files:['../controllers/loginController.js','../services/GoogleSignin.js']
         },
         {
             name:'signupController',
             files:['../controllers/signupController.js']
         },
+        {
+            name:'appController',
+            files:['../controllers/appController.js']
+        },
+        {
+            name:'addStockController',
+            files:['../controllers/addStockController.js']
+        },
+        {
+            name:'inventoryController',
+            files:['../controllers/inventoryController.js']
+        },
+        {
+            name:'weatherController',
+            files:['../controllers/weatherController.js']
+        },
+        {
+            name:'forecastController',
+            files:['../controllers/forecastController.js']
+        },
+        {
+            name:'logoutController',
+            files:['../controllers/logoutController.js']
+        },
+        
     ],
         debug:true
     });
@@ -65,7 +91,12 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                 .state('app',{
                     url:'/app',
                     templateUrl:'templates/app.html',
-                    controller:'appController'
+                    controller:'appController',
+                    resolve:{
+                        loadAppCtrl:['$ocLazyLoad',function($ocLazyLoad){
+                            return $ocLazyLoad.load('appController');
+                        }]
+                    }
                 })
                 .state('produce',{
                     parent:'app',
@@ -82,6 +113,15 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                             templateUrl:'templates/inventory.html',
                             controller:'inventoryController'
                         }
+                    },
+                    resolve:{
+                        loadAddStockCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
+                            return $ocLazyLoad.load('addStockController');
+                        }],
+                        loadInventoryCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
+                            return $ocLazyLoad.load('inventoryController');
+                        }]
+
                     }
                 })
                 .state('weather',{
@@ -99,12 +139,26 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                             templateUrl:'templates/forecast.html',
                             controller:'forecastController'
                         }
+                    },
+                    resolve:{
+                        loadWeatherCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
+                            return $ocLazyLoad.load('weatherController');
+                        }],
+                        loadForecastCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
+                            return $ocLazyLoad.load('forecastController');
+                        }]
+
                     }
 
                 })
                 .state('logout',{
                     url:'/logout',
-                    controller:'logoutController'
+                    controller:'logoutController',
+                    resolve:{
+                        loadlogoutCtrl:['$ocLazyLoad',function($ocLazyLoad){
+                            return $ocLazyLoad.load('logoutController');
+                        }]
+                    }
                 })
 
     }

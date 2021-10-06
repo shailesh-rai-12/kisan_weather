@@ -1,4 +1,4 @@
-export default function($scope,$rootScope){
+angular.module('kisanApp').controller('addStockController',function($scope,$rootScope){
 
     console.log('addStock controller');
     console.log($rootScope.loggedUser);
@@ -45,6 +45,6 @@ export default function($scope,$rootScope){
      
     
 
-}
+})
 
 

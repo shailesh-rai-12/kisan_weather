@@ -1,4 +1,4 @@
-export default function($rootScope,$scope){
+angular.module('kisanApp').controller('inventoryController',function($rootScope,$scope){
     console.log("inventory controller");
     $scope.sortColumn='date';
     $scope.reverseSort=false;
@@ -43,4 +43,4 @@ export default function($rootScope,$scope){
     
 
 
-}
+})

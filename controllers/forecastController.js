@@ -1,4 +1,4 @@
-export default function($scope,$rootScope,$log,ForecastFactory,WeatherService){
+angular.module('kisanApp').controller('forecastController',function($scope,$rootScope,$log,ForecastFactory,WeatherService){
             $log.info('forecast controller');
 
            $rootScope.getForecast=function(cityname){
@@ -21,4 +21,4 @@ export default function($scope,$rootScope,$log,ForecastFactory,WeatherService){
            }
             
 
-}
+})
