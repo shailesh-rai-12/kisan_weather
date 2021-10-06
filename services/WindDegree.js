@@ -1,4 +1,4 @@
-export default function(){
+angular.module('kisanApp').service('DirectionService',function(){
 
     this.direction=function(degree)
     {
@@ -23,4 +23,4 @@ export default function(){
 
         return dir;
     }
-}
+})

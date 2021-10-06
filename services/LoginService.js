@@ -1,4 +1,4 @@
-export default function($http){
+angular.module('kisanApp').service('LoginService',function($http){
 
     this.login=function(User)
     {
@@ -23,4 +23,4 @@ export default function($http){
         sessionStorage.setItem("status",false);
         sessionStorage.setItem("source",null);
     }
-}
+})

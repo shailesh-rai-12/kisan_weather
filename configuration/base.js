@@ -1,5 +1,5 @@
 
-export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
+angular.module('kisanApp').config(function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
     $urlRouterProvider.otherwise('/index/login');
     $ocLazyLoadProvider.config({
         modules:[
@@ -9,7 +9,7 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
         },
         {
             name:'loginController',
-            files:['../controllers/loginController.js','../services/GoogleSignin.js']
+            files:['../controllers/loginController.js']
         },
         {
             name:'signupController',
@@ -39,6 +39,34 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
             name:'logoutController',
             files:['../controllers/logoutController.js']
         },
+        {
+            name:'LoginService',
+            files:['../services/LoginService.js']
+        },
+        {
+            name:'RegisterService',
+            files:['../services/RegisterService.js']
+        },
+        {
+            name:'WeatherService',
+            files:['../services/WeatherService.js']
+        },
+        {
+            name:'WindDirectionService',
+            files:['../services/WindDegree.js']
+        },
+        {
+            name:'WeatherFactory',
+            files:['../factories/WeatherFactory.js']
+        },
+        {
+            name:'ForecastFactory',
+            files:['../factories/ForecastFactory.js']
+        },
+        {
+            name:'NavDirective',
+            files:['../directives/navigation.js']
+        }
         
     ],
         debug:true
@@ -66,7 +94,7 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                     },
                     resolve:{
                         loadLoginCtrl:['loadIndexCtrl','$ocLazyLoad',function(loadIndexCtrl,$ocLazyLoad){
-                            return $ocLazyLoad.load('loginController');
+                            return $ocLazyLoad.load(['loginController','LoginService']);
                         }]
 
                     }
@@ -83,7 +111,7 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                     },
                     resolve:{
                         loadSignupCtrl:['loadIndexCtrl','$ocLazyLoad',function(loadIndexCtrl,$ocLazyLoad){
-                            return $ocLazyLoad.load('signupController');
+                            return $ocLazyLoad.load(['signupController','RegisterService']);
                         }]
 
                     }
@@ -94,7 +122,7 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                     controller:'appController',
                     resolve:{
                         loadAppCtrl:['$ocLazyLoad',function($ocLazyLoad){
-                            return $ocLazyLoad.load('appController');
+                            return $ocLazyLoad.load(['appController','NavDirective']);
                         }]
                     }
                 })
@@ -142,10 +170,10 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                     },
                     resolve:{
                         loadWeatherCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
-                            return $ocLazyLoad.load('weatherController');
+                            return $ocLazyLoad.load(['weatherController','WeatherFactory','WeatherService','WindDirectionService']);
                         }],
                         loadForecastCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
-                            return $ocLazyLoad.load('forecastController');
+                            return $ocLazyLoad.load(['forecastController','ForecastFactory','WeatherService','WindDirectionService']);
                         }]
 
                     }
@@ -156,9 +184,9 @@ export default function($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                     controller:'logoutController',
                     resolve:{
                         loadlogoutCtrl:['$ocLazyLoad',function($ocLazyLoad){
-                            return $ocLazyLoad.load('logoutController');
+                            return $ocLazyLoad.load(['logoutController','LoginService']);
                         }]
                     }
                 })
 
-    }
+    })

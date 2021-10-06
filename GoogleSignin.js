@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-import { getAuth,signInWithPopup,GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
+ import { getAuth,signInWithPopup,GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,8 +22,9 @@ const provider=new GoogleAuthProvider();
 provider.addScope('profile');
 provider.addScope('email');
 
-angular.module('kisanApp').service('GoogleSign',function(){
+angular.module('googleAuth',[]).service('GoogleSign',function(){
 
+  
         this.googleSignIn = function(){
             
             return signInWithPopup(auth, provider);

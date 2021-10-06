@@ -1,4 +1,4 @@
-export default function(DirectionService)
+angular.module('kisanApp').service('WeatherService',function(DirectionService)
 {
     this.getWeatherObject=function(object,name){
             var weatherObj ={};
@@ -12,4 +12,4 @@ export default function(DirectionService)
 
             return weatherObj;
     }
-}
+})

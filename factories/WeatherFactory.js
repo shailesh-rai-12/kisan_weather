@@ -1,4 +1,4 @@
-export default function($http){
+angular.module('kisanApp').factory('WeatherFactory',function($http){
         var obj={};
         obj.getWeather= function(city){
 
@@ -14,4 +14,4 @@ export default function($http){
             
         }
         return obj;
-}
+})

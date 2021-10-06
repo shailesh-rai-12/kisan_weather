@@ -1,4 +1,4 @@
-export default function () {
+angular.module('kisanApp').directive('navBar',function () {
 
     return {
         restrict:'E',
@@ -8,4 +8,4 @@ export default function () {
         }
     }
     
-}
+})
