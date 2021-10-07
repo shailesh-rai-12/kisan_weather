@@ -1,7 +1,11 @@
 angular.module('kisanApp').controller('addStockController',function($scope,$rootScope){
 
     console.log('addStock controller');
-    console.log($rootScope.loggedUser);
+    console.log($rootScope.loggedUser); 
+
+    //$scope.datecomp=$rootScope.datecomp;
+    $rootScope.visible=false;
+
     $rootScope.mode=true;
     $rootScope.dataItems=[]
     var itemId;

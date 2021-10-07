@@ -66,6 +66,14 @@ angular.module('kisanApp').config(function($stateProvider,$urlRouterProvider,$oc
         {
             name:'NavDirective',
             files:['../directives/navigation.js']
+        },
+        {
+            name:'DateComponent',
+            files:['../components/dateComponent/dateComponent.js']
+        },
+        {
+            name:'TimeComponent',
+            files:['../components/timeComponent/timeComponent.js']
         }
         
     ],
@@ -144,7 +152,7 @@ angular.module('kisanApp').config(function($stateProvider,$urlRouterProvider,$oc
                     },
                     resolve:{
                         loadAddStockCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
-                            return $ocLazyLoad.load('addStockController');
+                            return $ocLazyLoad.load(['addStockController','DateComponent','TimeComponent']);
                         }],
                         loadInventoryCtrl:['loadAppCtrl','$ocLazyLoad',function(loadAppCtrl,$ocLazyLoad){
                             return $ocLazyLoad.load('inventoryController');
