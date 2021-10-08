@@ -1,2 +1,2 @@
-<input id="clockpicker" type="text" data-default="20:48" ng-show="show" data-placement="left" data-align="top" ng-model="timecomp" ng-change='onchange()'>
-<span>{{ timecomp }}</span>
+<input id="clockpicker" type="text" ng-blur="onchange()" ng-show="show" data-placement="left" data-align="top" ng-model="timecomp" ng-change='onchange()'>
+<span ng-hide="show">{{ time }}</span>

@@ -1,4 +1,4 @@
-angular.module('kisanApp').controller('addStockController',function($scope,$rootScope){
+angular.module('kisanApp').controller('addStockController',function($scope,$rootScope,$state){
 
     console.log('addStock controller');
     console.log($rootScope.loggedUser); 
@@ -9,6 +9,10 @@ angular.module('kisanApp').controller('addStockController',function($scope,$root
     $rootScope.mode=true;
     $rootScope.dataItems=[]
     var itemId;
+    // $rootScope.refresh=function()
+    // {
+    //         $state.reload();
+    // }
     $scope.getProduce = function()
     { 
         var produce={};
@@ -17,6 +21,7 @@ angular.module('kisanApp').controller('addStockController',function($scope,$root
         produce['quantity']=$scope.quantity;
         produce['date']=(new Date($scope.date)).toLocaleDateString('en-IN');
         $rootScope.dataItems.push(produce);
+        //$scope.refresh();
         $scope.cancel();
 
     }

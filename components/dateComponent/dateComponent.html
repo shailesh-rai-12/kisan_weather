@@ -1,4 +1,3 @@
-<!-- <input type="date" ng-show="show" ng-model="datecomp" ng-change='onchange()'> -->
-<!-- <div id="datepicker" ng-show="show" data-date="10/8/2021"></div> -->
-     <input type="text" id="datepicker" ng-show="show" data-date="10/8/2021" ng-model="datecomp" ng-change='onchange()'>
-<span>{{date}}</span>
+
+     <input type="text" id="datepicker" value="datecomp"  ng-show="show" ng-model="datecomp" ng-change='onchange()'>
+     <span ng-hide="show">{{date}}</span>
